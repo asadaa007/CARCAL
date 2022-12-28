@@ -8,16 +8,16 @@ import {
   Alert
 } from 'react-native';
 import React, {useState} from 'react';
-import MainHeader from '../../components/AuthHeader'
+import {AuthHeader} from '../../index'
 
 const DetailerSection = ({navigation}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <SafeAreaView
       style={{flex: 1, backgroundColor: '#16225B', flexDirection: 'column'}}>
-      <MainHeader />
+      <AuthHeader />
       <View style={styles.DetailerSectionScreen}>
-       
+      <Text>Hello</Text>
       </View>
     </SafeAreaView>
   );
@@ -26,11 +26,11 @@ const DetailerSection = ({navigation}) => {
 const styles = StyleSheet.create({
   DetailerSectionScreen: {
     flex: 4,
-    backgroundColor: '#EFEFEF',
+    // backgroundColor: '#EFEFEF',
+    backgroundColor: 'yellow',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     padding: 30,
-    paddingTop: 70,
   },
   
 });

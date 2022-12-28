@@ -9,9 +9,8 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import CheckBox from '@react-native-community/checkbox';
-import MainHeader from '../../components/MainHeader';
-import MainInputFeild from '../../components/MainInputFeild';
-import Button from '../../components/Button';
+import {MainHeader,MainInputFeild,Button} from '../../index'
+
 
 
 const Home = ({navigation}) => {
@@ -42,7 +41,7 @@ const Home = ({navigation}) => {
         </View>
         <Button
           BTNtext={'LOGIN'}
-          byPress={() => navigation.navigate('Dashboard')}
+          byPress={() => navigation.navigate('Dashboard')+[Alert.alert('Welcome Asad')]}
         />
 
         <TouchableOpacity onPress={()=>navigation.navigate('ForgetPassword')}>

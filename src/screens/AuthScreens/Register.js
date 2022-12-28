@@ -8,10 +8,8 @@ import {
   Alert,
 } from 'react-native';
 import React, {useState} from 'react';
-import CheckBox from '@react-native-community/checkbox';
-import MainHeader from '../../components/MainHeader';
-import MainInputFeild from '../../components/MainInputFeild';
-import Button from '../../components/Button';
+import {MainHeader,MainInputFeild,Button} from '../../index'
+
 
 const Home = ({navigation}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
@@ -38,7 +36,7 @@ const Home = ({navigation}) => {
         </View>
         <Button
           BTNtext={'Register'}
-          byPress={() => navigation.navigate('Home')}
+          byPress={() => navigation.navigate('Home')+[Alert.alert('Successfully Registered')]}
         />
       </View>
     </SafeAreaView>

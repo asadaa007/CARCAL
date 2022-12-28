@@ -18,7 +18,8 @@ const MainHeader = () => {
 
 const styles = StyleSheet.create({
   hederBack:{
-    flex:1,
+    // flex:1,
+    maxHeight:160,
     backgroundColor:'#16225B',
     paddingTop:20,
     alignItems:'center',
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
     fontSize:13,
     marginTop:-10,
     textTransform:'uppercase',
+    marginBottom:80
   },
   logoBox:{
     height:90,

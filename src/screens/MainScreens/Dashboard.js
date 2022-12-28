@@ -6,23 +6,27 @@ import {
   View,
   Image,
   Alert,
+  DrawerLayoutAndroid
 } from 'react-native';
 import React, {useState} from 'react';
-import AuthHeader from '../../components/AuthHeader';
+import {AuthHeader,CategBtn1,CategBtn2} from '../../index'
 import SwitchSelector from 'react-native-switch-selector';
 import {Calendar} from 'react-native-calendars';
-import CategBtn1 from '../../components/CategBtn1';
-import CategBtn2 from '../../components/CategBtn2';
+
+
 
 
 const Home = ({navigation}) => {
+
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
 
   const [showHide, setShowHide] = useState(false);
   return (
     <SafeAreaView
       style={{flex: 1, backgroundColor: '#16225B', flexDirection: 'column'}}>
-      <AuthHeader />
+      <AuthHeader
+      // openD={openDrawer}
+      />
       <View style={styles.homeScreen}>
         <>
           <SwitchSelector
@@ -175,6 +179,7 @@ const Home = ({navigation}) => {
           )}
         </View>
       </View>
+    
     </SafeAreaView>
   );
 };
