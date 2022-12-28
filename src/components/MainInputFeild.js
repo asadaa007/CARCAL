@@ -6,7 +6,6 @@ import  FontAwesome5  from 'react-native-vector-icons/FontAwesome5';
 const MainInputFeild = ({placeHolder, value,onChangeText,secureTextEntry, iconName}) => {
   return (
     <View style={styles.inputBox}>
-      <Text style={styles.iconn}><FontAwesome5  name={iconName} color='#16225B' size={25} light /></Text>
       <TextInput
       style={styles.inputFeild}
       placeholder={placeHolder}
@@ -15,6 +14,7 @@ const MainInputFeild = ({placeHolder, value,onChangeText,secureTextEntry, iconNa
       secureTextEntry={secureTextEntry}
       placeholderTextColor='#16225B'
       />
+      <Text style={styles.iconn}><FontAwesome5  name={iconName} color='#16225B' size={25} solid /></Text>
     </View>
   )
 }
@@ -24,15 +24,20 @@ const styles = StyleSheet.create({
     borderBottomColor:'#16225B',
     borderBottomWidth:1,
     paddingLeft:35,
+    paddingBottom:10,
     fontSize:20,
     color:'#16225B'
   },
   iconn:{
     position:'absolute',
-    top:10,
+    left:0,
+    bottom:10,
+    overflow:'hidden',
   },
   inputBox:{
-    marginBottom:20
+    flexWrap:'nowrap',
+    marginBottom:20,
+    position:'relative',
   }
 })
 export default MainInputFeild

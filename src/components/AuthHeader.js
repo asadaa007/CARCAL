@@ -1,8 +1,25 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
+
 const AuthHeader = () => {
+
+  const [currentDate, setcurrentDate]= useState('')
+
+  useEffect(()=>{
+    var date = new Date().getDate() // current Date
+    var month = new Date().getMonth() +1 // current Month
+    var year = new Date().getFullYear() // current Year
+
+    setcurrentDate(
+      date +'-' + month +'-' + year
+    )
+
+  },[])
+
+
+
   return (
     <View style={styles.hederBack}>
       <View style={styles.topHeader}>
@@ -18,14 +35,24 @@ const AuthHeader = () => {
         </TouchableOpacity>
        </View>
         <View style={styles.userInfoBox}>
-          <Text style={styles.userNameText}>User Name Here</Text>
-          <Text style={styles.lastLoginTime}>Last Login 13-10-2022</Text>
+          <Text style={styles.userNameText}>Asad Ur Rehman</Text>
+          <Text style={styles.lastLoginTime}>Last Login {currentDate}</Text>
         </View>
         <TouchableOpacity>
         <Text><FontAwesome5 style={styles.ico} name={'search'} size={20} solid /></Text>
         </TouchableOpacity>
         <TouchableOpacity>
         <Text><FontAwesome5 style={styles.ico} name={'bell'} size={20} solid /></Text>
+        <View style={{
+          backgroundColor:'yellow',
+          width:20, height:20,
+          position:'absolute',
+          borderRadius:50, 
+          top:-10,
+          left:-10,
+          justifyContent:'center',
+          alignItems:'center'
+          }}><Text style={{color:'black'}}>2</Text></View>
         </TouchableOpacity>
         
       </View>
@@ -46,8 +73,6 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'space-around',
     width:'100%',
-    marginTop:15,
-    marginBottom:20,
   },
   heading:{
     fontSize:50,
@@ -81,6 +106,7 @@ const styles = StyleSheet.create({
   userNameText:{
     fontSize:20,
     color:'white',
+    fontWeight:'600'
   },
   lastLoginTime:{
     color:'white'
